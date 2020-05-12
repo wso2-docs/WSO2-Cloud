@@ -1,0 +1,381 @@
+{
+  "ROSTemplateFormatVersion": "2015-09-01",
+  "Parameters": {
+     "InstanceType": {
+      "Default": "ecs.g5.large",
+      "AllowedValues": [
+        "ecs.g5.large",
+        "ecs.g5.xlarge",
+        "ecs.g5.2xlarge"
+      ],
+      "Type": "String",
+      "Description": "Type of the ECS instance",
+      "Label": "ECS Instance Type"
+    },
+    "OrganisationName": {
+      "Type": "String",
+      "Label": "WSO2 Cloud Organisation Name",
+      "NoEcho": false,
+      "Description": "WSO2 Cloud Organisation Name",
+      "Confirm": false
+    },
+     "OrganisationEmail": {
+      "Type": "String",
+      "Label": "WSO2 Cloud Organisation Email",
+      "NoEcho": false,
+      "Description": "WSO2 Cloud Organisation Email",
+      "Confirm": false
+    },   
+    "OrganisationPassword": {
+      "Type": "String",
+      "Label": "WSO2 Cloud Organisation Password",
+      "NoEcho": true,
+      "Description": "WSO2 Cloud Password",
+      "Confirm": "false"
+    },
+    "ServerCertificate": {
+      "Description": "Server certificate",
+      "Confirm": false,
+      "Default": "-----BEGIN CERTIFICATE-----\nMIIF5DCCA8ygAwIBAgIJAJoePL70uDpBMA0GCSqGSIb3DQEBCwUAMIGGMQswCQYD\nVQQGEwJVUzELMAkGA1UECAwCQ0ExCzAJBgNVBAcMAk1WMQ0wCwYDVQQKDARXU08y\nMQ0wCwYDVQQLDARXU08yMSAwHgYDVQQDDBcqLm1pY3JvZ2F0ZXdheS53c28yLmNv\nbTEdMBsGCSqGSIb3DQEJARYOY2xvdWRAd3NvMi5jb20wHhcNMjAwNDIzMDYxMzEz\nWhcNMzAwNDIxMDYxMzEzWjCBhjELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAkNBMQsw\nCQYDVQQHDAJNVjENMAsGA1UECgwEV1NPMjENMAsGA1UECwwEV1NPMjEgMB4GA1UE\nAwwXKi5taWNyb2dhdGV3YXkud3NvMi5jb20xHTAbBgkqhkiG9w0BCQEWDmNsb3Vk\nQHdzbzIuY29tMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAr6uF46um\nXZ/DOTDaPEa1TMKOh8Q6z3hTWCrrTurVinTFOVSmrMHfMiyqxYlfD8+7EjBexmmZ\nl5KpNviPirfo3Z6WtAEt3Td5oOimWEpD8v8ayXF6zxPfmNkti5oP6Nlz7gSl+emT\nAWAwSYEHTfmbTwYh/Ch6jTZlxd6QTjd2My0hDwQ8cQOVUTxGv/IA5ZPIKRIEi+BA\nccnzvg3AT2p4ihIuD+2lCZN4SOmsXBdTZhUZWRoFsWGGCpyBeKcylj5HKfuCwl7P\n/8888bYUZLaej0HaYMivkVQQ4lCTOhYPi5ErtyuH/yHE5XUHkaOcs6gxnYCbLUZu\nVtRDeoCyP7aN3E5WKGGFBGtR7TZSPdSpsPC0UOf8hpl2qzPq2I5942Hah5s+kQ8R\n6+OCDXbc4vsBUij4r+uQtBXcHXhYedkJ3b+tuWGmviYKgEnrAeZJ5lhZexjx0dzI\n9fet8lnUFZTYAsJKhj5siPD2k6Ol9vH5ydogpEtN5sguaAeCQC8xlfwEAUB0al48\n3cUi7PW/gfhkhYG/0B3f0lomFu1JcotSUhQPv0zCK6qKqMNBRVLLxhcoolYvKeZ/\nv2PaN8HwRTHFXxukPFS2ZbH6KIqN9FKJnfm76JWRuU9vUheQ+J4EDU3vPxI5zJwX\nZbGPzrQ0uQiXfYBIzs/cY2RTE8m9MvaPPG8CAwEAAaNTMFEwHQYDVR0OBBYEFJnU\noBJ8B4qA5F0NCwI1/GXxoXOPMB8GA1UdIwQYMBaAFJnUoBJ8B4qA5F0NCwI1/GXx\noXOPMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggIBAJB6g0uYS7Qn\nXxMLG9EYiq6VBXd7vuWbrUBGS0SypyGrbGa4LxtQrNjBFBX1b5CEqIhR6E0pEkCN\n9/Ul+Gsn533w5v9x/dJ4tjHs1ECUp4GBXaGfzG7oqX2TEnDfP+Es2Wio5YBXXG59\n4R+RfjFl50t0xwv7SUI1k+rRISy8egKqYDmqqKxlX/H5uabSvFuEuw8NF4uvsOD6\nUHUuGYQu4X2QA6IV4NowRXvznwefzBIFZAj/Q725jevHhPIswm9BpaZa3xRbgGps\ncswCrEF8LtTRg2rs5ZOuaXsGKR1aMqhuaATdYyGacYCL81SrkQ/I3Wd+sLPJKqU/\nwpJQGWShTSktwg4tOwopjFXCT/wf19Ca5ezX0lpT7DXcgHBWNl4AfohvUSHcZBjq\n4Zpb9VRuygWIwR5PS97PsNah7ZKFtPXloUac9qqjEerZGAUYVHzniAW5zmMweZG/\nmGBaqcz6q9i5I40CJ6Xptg1JCKfn6m6MPRaJFeKkkjMA8P8j76o7yE2XklJAh7yN\nIhmvkHHVJOJn2+UR2XVslOnUzZKLOIbdS76oVdA4IShWtL9S+pNlmMu5ar4/+2ws\nxqqAsTQXFbLbonoQ8MHkKAU2Dh+i+zgkdqQ72GTAGCY2/WbkMpchi8fPVK9vmkOw\nWyTyojjASYRnwK5pGAmdK7LCYvKOnkz1\n-----END CERTIFICATE-----\n",
+      "Label": "Server ceritificate",
+      "NoEcho": false,
+      "Type": "String"
+    },
+    "PrivateKey": {
+      "Description": "Server certificate's Private Key",
+      "Confirm": false,
+      "Default": "-----BEGIN PRIVATE KEY-----\n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\nhhOFCukDfQuV9XD/KtD1TysAZYvm\n-----END PRIVATE KEY-----\n",
+      "Label": "Server ceritificate Private Key",
+      "NoEcho": false,
+      "Type": "String"
+    },
+    "MicroGatewayVersion": {
+      "Description": "Default value here is the latest version, update for a different version only",
+      "Label" : "Microgateway Version Timestamp",
+      "Default": "latest",
+      "Confirm": false,
+      "NoEcho" : false,
+      "Type" : "String"
+    }
+  },
+  "Description": "An HA microgateway instance cluster",
+  "Resources": {
+    "Certificate": {
+      "Type": "ALIYUN::SLB::Certificate",
+      "Properties": {
+        "CertificateType": "Server",
+        "CertificateName": "httpCertificate",
+        "PrivateKey": {
+          "Ref": "PrivateKey"
+        },
+        "Certificate": {
+          "Ref": "ServerCertificate"
+        }
+      }
+    },
+    "ServerLoadBalancerListenerHTTPS": {
+      "Type": "ALIYUN::SLB::Listener",
+      "Properties": {
+        "Protocol": "https",
+        "ListenerPort": "443",
+        "Bandwidth": 5,
+        "BackendServerPort": "8280",
+        "LoadBalancerId": {
+          "Ref": "ServerLoadBalancer"
+        },
+        "ServerCertificateId": {
+          "Fn::GetAtt": [
+            "Certificate",
+            "CertificateId"
+          ]
+        }
+      }
+    },
+    "MicroGatewayInstance2": {
+      "Type": "ALIYUN::ECS::Instance",
+      "Properties": {
+        "UserData": {
+          "Fn::Join": [
+            "",
+            [
+              "#! /bin/sh\n",
+              "OrganisationName='",
+              {
+                "Ref": "OrganisationName"
+              },
+              "'\n",
+              "OrganisationEmail='",
+              {
+                "Ref": "OrganisationEmail"
+              },
+              "'\n",
+              "OrganisationPassword='",
+              {
+                "Ref": "OrganisationPassword"
+              },
+              "' \n",
+              "MicroGatewayVersion='",
+              {
+                "Ref": "MicroGatewayVersion"
+              },
+              "' \n",
+              "sed -i -e \"s/\\${organisationName}/$OrganisationName/\" -e \"s/\\${organisationEmail}/$OrganisationEmail/\" -e \"s/\\${organisationPassword}/$OrganisationPassword/\" -e \"s/\\${version}/$MicroGatewayVersion/g\" /home/wso2user/startup.sh\n",
+              "sudo -su wso2user bash /home/wso2user/startup.sh\n"
+            ]
+          ]
+        },
+        "VpcId": {
+          "Ref": "vpc"
+        },
+        "SecurityGroupId": {
+          "Ref": "SecurityGroup"
+        },
+        "ImageId": "m-8ps0man95d5zqkt6c3vk",
+        "AllocatePublicIP": "true",
+        "InstanceChargeType": "PostPaid",
+        "VSwitchId": {
+          "Ref": "vswitch"
+        },
+        "InstanceName": "MicroGatewayInstance2",
+        "InstanceType": {
+          "Ref": "InstanceType"
+        }
+      }
+    },
+    "SSHKeyPairAttachment": {
+      "Type": "ALIYUN::ECS::SSHKeyPairAttachment",
+      "Properties": {
+        "InstanceIds": [
+          {
+            "Fn::GetAtt": [
+              "MicroGatewayInstance1",
+              "InstanceId"
+            ]
+          },
+          {
+            "Fn::GetAtt": [
+              "MicroGatewayInstance2",
+              "InstanceId"
+            ]
+          }
+        ],
+        "KeyPairName": {
+          "Fn::GetAtt": [
+            "SSHKeyPair",
+            "KeyPairName"
+          ]
+        }
+      }
+    },
+    "SecurityGroup": {
+      "Type": "ALIYUN::ECS::SecurityGroup",
+      "Properties": {
+        "SecurityGroupIngress": [
+          {
+            "Priority": 1,
+            "IpProtocol": "tcp",
+            "NicType": "internet",
+            "SourceCidrIp": "0.0.0.0/0",
+            "PortRange": "22/22"
+          },
+                    {
+            "Priority": 1,
+            "IpProtocol": "all",
+            "NicType": "internet",
+            "SourceCidrIp": "0.0.0.0/0",
+            "PortRange": "-1/-1"
+          },
+          {
+            "Priority": 1,
+            "IpProtocol": "all",
+            "NicType": "intranet",
+            "SourceCidrIp": "0.0.0.0/0",
+            "PortRange": "-1/-1"
+          }
+        ],
+        "VpcId": {
+          "Ref": "vpc"
+        }
+      }
+    },
+    "MicroGatewayInstance1": {
+      "Type": "ALIYUN::ECS::Instance",
+      "Properties": {
+        "UserData": {
+          "Fn::Join": [
+            "",
+            [
+              "#! /bin/sh\n",
+              "OrganisationName='",
+              {
+                "Ref": "OrganisationName"
+              },
+              "'\n",
+              "OrganisationEmail='",
+              {
+                "Ref": "OrganisationEmail"
+              },
+              "'\n",
+              "OrganisationPassword='",
+              {
+                "Ref": "OrganisationPassword"
+              },
+              "' \n",
+              "MicroGatewayVersion='",
+              {
+                "Ref": "MicroGatewayVersion"
+              },
+              "' \n",
+              "sed -i -e \"s/\\${organisationName}/$OrganisationName/\" -e \"s/\\${organisationEmail}/$OrganisationEmail/\" -e \"s/\\${organisationPassword}/$OrganisationPassword/\" -e \"s/\\${version}/$MicroGatewayVersion/g\" /home/wso2user/startup.sh\n",
+              "sudo -su wso2user bash /home/wso2user/startup.sh\n"
+            ]
+          ]
+        },
+        "VpcId": {
+          "Ref": "vpc"
+        },
+        "SecurityGroupId": {
+          "Ref": "SecurityGroup"
+        },
+        "ImageId": "m-8ps0man95d5zqkt6c3vk",
+        "AllocatePublicIP": "true",
+        "InstanceChargeType": "PostPaid",
+        "VSwitchId": {
+          "Ref": "vswitch"
+        },
+        "InstanceName": "MicroGatewayInstance1",
+        "InstanceType": {
+          "Ref": "InstanceType"
+        }
+      }
+    },
+    "ServerLoadBalancer": {
+      "Type": "ALIYUN::SLB::LoadBalancer",
+      "Properties": {
+        "InternetChargeType": "paybytraffic",
+        "AddressType": "internet",
+        "PayType": "PayOnDemand",
+        "LoadBalancerName": "gateway-loadbalancer"
+      }
+    },
+    "Attachment": {
+      "Type": "ALIYUN::SLB::BackendServerAttachment",
+      "Properties": {
+        "BackendServerList": [
+          {
+            "Fn::GetAtt": [
+              "MicroGatewayInstance1",
+              "InstanceId"
+            ]
+          },
+          {
+            "Fn::GetAtt": [
+              "MicroGatewayInstance2",
+              "InstanceId"
+            ]
+          }
+        ],
+        "LoadBalancerId": {
+          "Ref": "ServerLoadBalancer"
+        }
+      }
+    },
+    "vpc": {
+      "Type": "ALIYUN::ECS::VPC",
+      "Properties": {
+        "VpcName": "simple_ecs_vpc",
+        "CidrBlock": "192.168.0.0/16"
+      }
+    },
+    "ServerLoadBalancerListenerHTTP": {
+      "Type": "ALIYUN::SLB::Listener",
+      "Properties": {
+        "Bandwidth": 5,
+        "Protocol": "http",
+        "ListenerPort": "80",
+        "BackendServerPort": "8280",
+        "LoadBalancerId": {
+          "Ref": "ServerLoadBalancer"
+        }
+      }
+    },
+    "vswitch": {
+      "Type": "ALIYUN::ECS::VSwitch",
+      "Properties": {
+        "VpcId": {
+          "Ref": "vpc"
+        },
+        "CidrBlock": "192.168.0.0/16",
+        "ZoneId": {
+          "Fn::Select": [
+            "0",
+            {
+              "Fn::GetAZs": {
+                "Ref": "ALIYUN::Region"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "SSHKeyPair": {
+      "Type": "ALIYUN::ECS::SSHKeyPair",
+      "Properties": {
+        "KeyPairName": "ssh_key_pair_mg"
+      }
+    }
+  },
+  "Outputs": {
+    "PublicIp-MicroGateway2": {
+      "Description": "Public IP address of the created ECS instance",
+      "Value": {
+        "Fn::GetAtt": [
+          "MicroGatewayInstance2",
+          "PublicIp"
+        ]
+      }
+    },
+    "PublicIp-MicroGateway1": {
+      "Description": "Public IP address of the created ECS instance",
+      "Value": {
+        "Fn::GetAtt": [
+          "MicroGatewayInstance1",
+          "PublicIp"
+        ]
+      }
+    },
+    "KeyPairFingerPrint": {
+      "Value": {
+        "Fn::GetAtt": [
+          "SSHKeyPair",
+          "KeyPairFingerPrint"
+        ]
+      }
+    },
+    "LoadBalancer-Ip": {
+      "Description": "Public IP address of the created Server Load Balancer",
+      "Value": {
+        "Fn::GetAtt": [
+          "ServerLoadBalancer",
+          "IpAddress"
+        ]
+      }
+    },
+    "PrivateKeyBody": {
+      "Value": {
+        "Fn::GetAtt": [
+          "SSHKeyPair",
+          "PrivateKeyBody"
+        ]
+      }
+    },
+    "KeyPairName": {
+      "Value": {
+        "Fn::GetAtt": [
+          "SSHKeyPair",
+          "KeyPairName"
+        ]
+      }
+    }
+  }
+}
