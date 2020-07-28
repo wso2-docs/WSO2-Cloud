@@ -188,7 +188,7 @@
             "SecurityGroupId":{
                "Ref":"SecurityGroup"
             },
-            "ImageId":"m-8ps0man95d5zqkt6c3vk",
+            "ImageId":"m-8psbp6wjwrtye01coepd",
             "AllocatePublicIP":"true",
             "InstanceChargeType":"PostPaid",
             "VSwitchId":{
@@ -304,7 +304,7 @@
             "SecurityGroupId":{
                "Ref":"SecurityGroup"
             },
-            "ImageId":"m-8ps0man95d5zqkt6c3vk",
+            "ImageId":"m-8psbp6wjwrtye01coepd",
             "AllocatePublicIP":"true",
             "InstanceChargeType":"PostPaid",
             "VSwitchId":{
